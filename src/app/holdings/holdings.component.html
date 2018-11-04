@@ -1,0 +1,11 @@
+<h2>My Holdings</h2>
+
+<ul class="holdings">
+  <li *ngFor="let holding of holdings"
+    [class.selected]="holding === selectedHolding"
+    (click)="onSelect(holding)">
+    <span class="badge">{{holding.id}}</span> {{holding.name}}
+  </li>
+</ul>
+
+<app-holding-detail [holding]="selectedHolding"></app-holding-detail>
